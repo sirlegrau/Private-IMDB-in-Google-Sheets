@@ -259,7 +259,6 @@ function updateData() {
                     }
                 }
             }
-            //Logger.log(movieInfo);
             console.log(searchKey);
         } else {}
         sheet.getRange(iterator, 1).setBackground('#CCCCCC');
@@ -356,9 +355,6 @@ function getMovieDetail(id) {
             // GET episode count and seasons
             let episodios = data["number_of_episodes"];
             let temporadas = data["number_of_seasons"];
-            Logger.log(duracion)
-            Logger.log(temporadas)
-            Logger.log(episodios)
             DATA_Direccion = temporadas + ' temp  - ' + episodios + ' cap  - ' + round + ' min';
         }
 
@@ -377,20 +373,11 @@ function getMovieDetail(id) {
         } else if (sheet.getName().includes('SERIES')) {
             DATA_Año = data["first_air_date"].substring(0, 4);
         }
-
-
         //-- IMDB --//
         DATA_Imdb = data["vote_average"];
-        /*
-  Logger.log(DATA_Genero);
-  Logger.log(DATA_Sinopsis);
-  Logger.log(DATA_Direccion);
-  Logger.log(DATA_Duracion);
-  Logger.log(DATA_Año);
-  Logger.log(DATA_Imdb);*/
 
+        
         //-- RETURN VALUES TO MAIN ARRAY--//
-
         let movieInfo = [];
         movieInfo.push(DATA_Genero);
         movieInfo.push(DATA_Sinopsis);
@@ -413,8 +400,6 @@ function getPlataforma(id) {
     var response = UrlFetchApp.fetch(search);
     var json = response.getContentText();
     var data = JSON.parse(json);
-    //Logger.log(response.getContentText());
-    Logger.log(data["results"]["ES"]);
     var provider;
     //sort by type
     if ("ES" in data["results"]) {
