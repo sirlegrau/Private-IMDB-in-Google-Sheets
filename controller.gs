@@ -43,11 +43,11 @@ function onOpen() {
 }
 
 function hideInfo() {
-    sheet.hideColumns(2, 8);
+    sheet.hideColumns(2, 7);
 }
 
 function showInfo() {
-    sheet.showColumns(2, 8);
+    sheet.showColumns(2, 7);
 }
 //////  SORTING METHODS ///////////
 //Average
