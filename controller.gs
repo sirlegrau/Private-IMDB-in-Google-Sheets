@@ -258,8 +258,6 @@ function updateData() {
                     }
                 }
             }
-            //Logger.log(movieInfo);
-            console.log(searchKey);
         } else {}
         sheet.getRange(iterator, 1).setBackground('#CCCCCC');
         iterator++;
@@ -353,9 +351,6 @@ function getMovieDetail(id) {
             let round = Math.ceil(average / 5) * 5;
             let episodios = data["number_of_episodes"];
             let temporadas = data["number_of_seasons"];
-            Logger.log(duracion)
-            Logger.log(temporadas)
-            Logger.log(episodios)
             DATA_Direccion = temporadas + ' temp  - ' + episodios + ' cap  - ' + round + ' min';
 
         }
@@ -414,8 +409,6 @@ function getPlataforma(id) {
     var response = UrlFetchApp.fetch(search);
     var json = response.getContentText();
     var data = JSON.parse(json);
-    //Logger.log(response.getContentText());
-    Logger.log(data["results"]["ES"]);
     var provider;
     //sort by type
     if ("ES" in data["results"]) {
